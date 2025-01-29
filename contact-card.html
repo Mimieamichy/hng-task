@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .social-links a {
+            margin: 0 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="myImage.jpeg" alt="Profile Picture" data-testid="profilePicture">
+        <h2 data-testid="fullName">Miracle Ezeh</h2>
+        <h4 data-testid="jobTitle">Frontend Developer</h4>
+        <p data-testid="shortBio">Passionate about building user-friendly web applications and enhancing user experiences with modern web technologies.</p>
+        <p data-testid="currentLocation">Abuja, Nigeria</p>
+        <p>Email: <span data-testid="emailAddress">amichy07@gmail.com</span></p>
+        <div class="social-links" data-testid="socialLinks">
+            <a href="https://github.com/Mimieamichy" target="_blank">GitHub</a>
+            <a href="https://x.com/js_mimie" target="_blank">Twitter</a>
+        </div>
+        <p>UTC Time: <span id="utcTime" data-testid="currentTimeUTC"></span></p>
+    </div>
+    <script>
+        function updateTime() {
+            document.getElementById("utcTime").textContent = new Date().toUTCString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
